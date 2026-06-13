@@ -1,0 +1,74 @@
+{
+  "name": "llm-fallback-router",
+  "version": "0.1.0",
+  "description": "Intelligent routing, automatic failover, latency-aware model selection, and cost-controlled fallback across every major LLM provider. Never get a 503 from your AI again.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./dashboard": {
+      "types": "./dist/dashboard.d.ts",
+      "import": "./dist/dashboard.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:test": "tsc -p tsconfig.test.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "pretest": "npm run build && npm run build:test",
+    "test": "node --test \"dist-test/*.test.js\"",
+    "demo": "npm run build && node scripts/scoreboard.mjs",
+    "bench": "npm run build && node bench/bench.mjs",
+    "example:quickstart": "npm run build && node examples/quickstart.mjs",
+    "example:failover": "npm run build && node examples/failover.mjs",
+    "example:cost": "npm run build && node examples/cost-aware.mjs",
+    "example:split": "npm run build && node examples/traffic-split.mjs",
+    "example:dashboard": "npm run build && node examples/dashboard.mjs",
+    "prepublishOnly": "npm run clean && npm run build",
+    "clean": "node -e \"const fs=require('node:fs');for(const d of ['dist','dist-test'])fs.rmSync(d,{recursive:true,force:true})\""
+  },
+  "keywords": [
+    "llm",
+    "openai",
+    "anthropic",
+    "claude",
+    "gemini",
+    "mistral",
+    "failover",
+    "fallback",
+    "router",
+    "reliability",
+    "circuit-breaker",
+    "load-balancing",
+    "ai-gateway",
+    "ai-infrastructure",
+    "latency",
+    "cost-optimization"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ingridtoulotte/llm-fallback-router"
+  },
+  "homepage": "https://github.com/ingridtoulotte/llm-fallback-router#readme",
+  "bugs": {
+    "url": "https://github.com/ingridtoulotte/llm-fallback-router/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  }
+}
