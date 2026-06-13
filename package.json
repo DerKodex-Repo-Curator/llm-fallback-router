@@ -28,7 +28,7 @@
     "build:test": "tsc -p tsconfig.test.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "pretest": "npm run build && npm run build:test",
-    "test": "node --test \"dist-test/*.test.js\"",
+    "test": "node --test dist-test/budget.test.js dist-test/circuit-breaker.test.js dist-test/health.test.js dist-test/router.test.js dist-test/selection.test.js",
     "demo": "npm run build && node scripts/scoreboard.mjs",
     "bench": "npm run build && node bench/bench.mjs",
     "example:quickstart": "npm run build && node examples/quickstart.mjs",
