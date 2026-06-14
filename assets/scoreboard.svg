@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="404" viewBox="0 0 900 404" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" role="img" aria-label="llm-fallback-router live provider scoreboard">
+  <defs>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#58a6ff"/><stop offset="1" stop-color="#3fb950"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="898" height="402" rx="14" fill="#0b0e14" stroke="#1f2737"/>
+  <!-- title bar -->
+  <circle cx="28" cy="30" r="6" fill="#f85149"/>
+  <circle cx="48" cy="30" r="6" fill="#d29922"/>
+  <circle cx="68" cy="30" r="6" fill="#3fb950"/>
+  <text x="94" y="35" fill="#e6edf3" font-size="15" font-weight="600">&#9889; llm-fallback-router</text>
+  <text x="290" y="35" fill="#8b98ad" font-size="13">·  live provider scoreboard</text>
+  <line x1="0" y1="56" x2="900" y2="56" stroke="#1f2737"/>
+  <!-- column headers -->
+  <g fill="#8b98ad" font-size="11" letter-spacing="1.2">
+    <text x="28" y="84">PROVIDER</text>
+    <text x="168" y="84">MODEL</text>
+    <text x="372" y="84">STATUS</text>
+    <text x="492" y="84">LATENCY</text>
+    <text x="592" y="84">ERRORS</text>
+    <text x="676" y="84">SCORE</text>
+    <text x="744" y="84">HEALTH</text>
+  </g>
+  <line x1="0" y1="98" x2="900" y2="98" stroke="#161b22"/>
+
+  <!-- selected-row highlight (claude) -->
+  <rect x="6" y="156" width="888" height="42" rx="8" fill="#58a6ff" fill-opacity="0.08"/>
+  <rect x="6" y="156" width="3" height="42" fill="#58a6ff"/>
+
+  <!-- row 1: mistral -->
+  <g font-size="14">
+    <text x="28" y="132" fill="#e6edf3">mistral</text>
+    <text x="168" y="132" fill="#8b98ad">mistral-large-latest</text>
+    <circle cx="378" cy="127" r="5" fill="#3fb950"/>
+    <text x="392" y="132" fill="#3fb950">healthy</text>
+    <text x="492" y="132" fill="#e6edf3">429ms</text>
+    <text x="592" y="132" fill="#8b98ad">0.0%</text>
+    <text x="676" y="132" fill="#e6edf3" font-weight="700">98</text>
+    <rect x="744" y="121" width="130" height="9" rx="4" fill="#1f2737"/>
+    <rect x="744" y="121" width="127" height="9" rx="4" fill="#3fb950"/>
+  </g>
+  <!-- row 2: claude (selected) -->
+  <g font-size="14">
+    <text x="28" y="183" fill="#e6edf3" font-weight="600">claude</text>
+    <text x="168" y="183" fill="#8b98ad">claude-sonnet-4-6</text>
+    <circle cx="378" cy="178" r="5" fill="#3fb950"/>
+    <text x="392" y="183" fill="#3fb950">healthy</text>
+    <text x="492" y="183" fill="#e6edf3">573ms</text>
+    <text x="592" y="183" fill="#8b98ad">0.0%</text>
+    <text x="676" y="183" fill="#e6edf3" font-weight="700">97</text>
+    <rect x="744" y="172" width="130" height="9" rx="4" fill="#1f2737"/>
+    <rect x="744" y="172" width="126" height="9" rx="4" fill="#3fb950"/>
+  </g>
+  <!-- row 3: openai -->
+  <g font-size="14">
+    <text x="28" y="234" fill="#e6edf3">openai</text>
+    <text x="168" y="234" fill="#8b98ad">gpt-4o</text>
+    <circle cx="378" cy="229" r="5" fill="#3fb950"/>
+    <text x="392" y="234" fill="#3fb950">healthy</text>
+    <text x="492" y="234" fill="#e6edf3">639ms</text>
+    <text x="592" y="234" fill="#8b98ad">2.7%</text>
+    <text x="676" y="234" fill="#e6edf3" font-weight="700">94</text>
+    <rect x="744" y="223" width="130" height="9" rx="4" fill="#1f2737"/>
+    <rect x="744" y="223" width="122" height="9" rx="4" fill="#3fb950"/>
+  </g>
+  <!-- row 4: gemini (degraded) -->
+  <g font-size="14">
+    <text x="28" y="285" fill="#e6edf3">gemini</text>
+    <text x="168" y="285" fill="#8b98ad">gemini-2.5-flash</text>
+    <circle cx="378" cy="280" r="5" fill="#d29922"/>
+    <text x="392" y="285" fill="#d29922">degraded</text>
+    <text x="492" y="285" fill="#f0883e">2184ms</text>
+    <text x="592" y="285" fill="#d29922">6.7%</text>
+    <text x="676" y="285" fill="#e6edf3" font-weight="700">75</text>
+    <rect x="744" y="274" width="130" height="9" rx="4" fill="#1f2737"/>
+    <rect x="744" y="274" width="98" height="9" rx="4" fill="#d29922"/>
+  </g>
+
+  <line x1="0" y1="312" x2="900" y2="312" stroke="#161b22"/>
+  <text x="28" y="344" font-size="14" fill="#58a6ff">&#8594; router selected: <tspan font-weight="700">claude</tspan>  <tspan fill="#8b98ad" font-weight="400">(primary 503 &#8594; failed over in 14&#181;s)</tspan></text>
+  <text x="28" y="372" font-size="12" fill="#8b98ad">balanced strategy  ·  250 requests  ·  99.2% served  ·  3 failovers  ·  $1.84 spent  ·  0 dropped</text>
+</svg>

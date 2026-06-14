@@ -25,6 +25,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
     "build:test": "tsc -p tsconfig.test.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "pretest": "npm run build && npm run build:test",
@@ -57,7 +58,7 @@
     "latency",
     "cost-optimization"
   ],
-  "author": "",
+  "author": "ingridtoulotte (https://github.com/ingridtoulotte)",
   "license": "MIT",
   "repository": {
     "type": "git",

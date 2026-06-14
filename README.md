@@ -9,14 +9,22 @@
 [![CI](https://github.com/ingridtoulotte/llm-fallback-router/actions/workflows/ci.yml/badge.svg)](https://github.com/ingridtoulotte/llm-fallback-router/actions/workflows/ci.yml)
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![node](https://img.shields.io/badge/node-%E2%89%A518-3c873a.svg)](https://nodejs.org)
-[![dependencies](https://img.shields.io/badge/runtime%20deps-0-success.svg)](#zero-dependencies)
+[![runtime deps](https://img.shields.io/badge/runtime%20deps-0-success.svg)](#zero-dependencies)
 [![types](https://img.shields.io/badge/types-TypeScript-3178c6.svg)](#)
+[![stars](https://img.shields.io/github/stars/ingridtoulotte/llm-fallback-router?style=flat&color=f0b429)](https://github.com/ingridtoulotte/llm-fallback-router/stargazers)
 
 One API. Every provider. Automatic intelligence.
 
+<br/>
+
+<img src="./assets/scoreboard.svg" alt="llm-fallback-router live provider scoreboard — one provider degraded, traffic transparently failed over, request never dropped" width="800"/>
+
+<sub>↑ real output of <code>npm run demo</code> — a degraded provider, transparent failover, full audit, in ~30ms. No keys needed.</sub>
+
 </div>
 
----
+<details>
+<summary><b>See it as raw terminal text</b> (copy-pasteable)</summary>
 
 ```text
  PROVIDER      MODEL                 STATUS        LATENCY   ERRORS  SCORE  HEALTH
@@ -29,7 +37,7 @@ One API. Every provider. Automatic intelligence.
  → router selected: claude
 ```
 
-> `npm run demo` — the scoreboard above is real output, generated from simulated traffic in ~30ms. There's a live web version too (`npm run example:dashboard`).
+</details>
 
 ---
 
@@ -87,8 +95,11 @@ sequenceDiagram
 
 ## Quick start (under 60 seconds)
 
+Install straight from GitHub (TypeScript builds automatically on install — zero config):
+
 ```bash
-npm install llm-fallback-router
+npm install github:ingridtoulotte/llm-fallback-router
+# pin a release:  npm install github:ingridtoulotte/llm-fallback-router#v0.1.0
 ```
 
 ```ts
@@ -214,6 +225,12 @@ Every response carries a full `decision` — who was tried, who was skipped, and
 - **Live web dashboard + JSON API** — `createDashboardServer(router)` serves a zero-dependency dashboard at `http://127.0.0.1:7575` with `/api/health`, `/api/metrics`, `/api/scoreboard`, `/api/decisions`.
 - **Audit log** — `router.decisions()` returns the recent decision ring buffer.
 - **`onDecision` hook** — pipe every decision into your own logging/metrics.
+
+<div align="center">
+<img src="./assets/dashboard.svg" alt="Live web dashboard: provider stat cards, per-provider health table with score bars, and a real-time routing-decision feed" width="820"/>
+<br/>
+<sub>The live dashboard — <code>npm run example:dashboard</code>, then open <code>http://127.0.0.1:7575</code>. Zero dependencies, refreshes every 2s.</sub>
+</div>
 
 ### 🧪 Dry-run mode
 
@@ -347,6 +364,16 @@ v1 is intentionally focused: **excellent core routing**, not feature bloat. Next
 - [ ] Prometheus / OpenTelemetry exporters
 - [ ] Persistent metrics + provider benchmarking
 - [ ] Declarative YAML policy files
+
+---
+
+## Star History
+
+If outages, rate limits, and runaway bills have ever bitten you, **[star the repo](https://github.com/ingridtoulotte/llm-fallback-router)** — it's the cheapest insurance you'll buy today, and it helps others find it.
+
+<a href="https://star-history.com/#ingridtoulotte/llm-fallback-router&Date">
+  <img src="https://api.star-history.com/svg?repos=ingridtoulotte/llm-fallback-router&type=Date" alt="Star History Chart" width="640"/>
+</a>
 
 ---
 

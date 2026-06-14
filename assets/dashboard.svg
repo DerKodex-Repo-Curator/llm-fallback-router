@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="556" viewBox="0 0 900 556" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" role="img" aria-label="llm-fallback-router live web dashboard">
+  <rect x="1" y="1" width="898" height="554" rx="14" fill="#0b0e14" stroke="#1f2737"/>
+  <!-- header -->
+  <text x="24" y="38" fill="#e6edf3" font-size="16" font-weight="600">&#9889; LLM Fallback Router</text>
+  <circle cx="742" cy="32" r="5" fill="#3fb950"><animate attributeName="opacity" values="1;0.35;1" dur="1.6s" repeatCount="indefinite"/></circle>
+  <text x="756" y="37" fill="#8b98ad" font-size="12">live · refreshes every 2s</text>
+  <line x1="0" y1="58" x2="900" y2="58" stroke="#1f2737"/>
+
+  <!-- stat cards -->
+  <g>
+    <g transform="translate(24,78)"><rect width="160" height="72" rx="10" fill="#121622" stroke="#1f2737"/><text x="16" y="26" fill="#8b98ad" font-size="10" letter-spacing="1">PROVIDERS</text><text x="16" y="54" fill="#e6edf3" font-size="24" font-weight="600">4</text></g>
+    <g transform="translate(196,78)"><rect width="160" height="72" rx="10" fill="#121622" stroke="#1f2737"/><text x="16" y="26" fill="#8b98ad" font-size="10" letter-spacing="1">REQUESTS</text><text x="16" y="54" fill="#e6edf3" font-size="24" font-weight="600">250</text></g>
+    <g transform="translate(368,78)"><rect width="160" height="72" rx="10" fill="#121622" stroke="#1f2737"/><text x="16" y="26" fill="#8b98ad" font-size="10" letter-spacing="1">SUCCESS RATE</text><text x="16" y="54" fill="#3fb950" font-size="24" font-weight="600">99.2%</text></g>
+    <g transform="translate(540,78)"><rect width="160" height="72" rx="10" fill="#121622" stroke="#1f2737"/><text x="16" y="26" fill="#8b98ad" font-size="10" letter-spacing="1">FAILOVERS</text><text x="16" y="54" fill="#e6edf3" font-size="24" font-weight="600">3</text></g>
+    <g transform="translate(712,78)"><rect width="160" height="72" rx="10" fill="#121622" stroke="#1f2737"/><text x="16" y="26" fill="#8b98ad" font-size="10" letter-spacing="1">TOTAL COST</text><text x="16" y="54" fill="#e6edf3" font-size="24" font-weight="600">$1.84</text></g>
+  </g>
+
+  <!-- table panel -->
+  <rect x="24" y="170" width="852" height="206" rx="10" fill="#121622" stroke="#1f2737"/>
+  <g fill="#8b98ad" font-size="10" letter-spacing="1">
+    <text x="44" y="198">PROVIDER</text><text x="150" y="198">MODEL</text><text x="338" y="198">STATUS</text>
+    <text x="452" y="198">LATENCY</text><text x="556" y="198">ERR</text><text x="624" y="198">SCORE</text>
+    <text x="730" y="198">REQ</text><text x="800" y="198">COST</text>
+  </g>
+  <line x1="40" y1="210" x2="860" y2="210" stroke="#1f2737"/>
+
+  <!-- rows -->
+  <g font-size="13">
+    <!-- mistral -->
+    <text x="44" y="240" fill="#e6edf3">mistral</text><text x="150" y="240" fill="#8b98ad">mistral-large-latest</text>
+    <circle cx="344" cy="236" r="4" fill="#3fb950"/><text x="356" y="240" fill="#3fb950">healthy</text>
+    <text x="452" y="240" fill="#e6edf3">429ms</text><text x="556" y="240" fill="#8b98ad">0.0%</text>
+    <rect x="624" y="231" width="84" height="7" rx="3" fill="#1f2737"/><rect x="624" y="231" width="82" height="7" rx="3" fill="#3fb950"/>
+    <text x="730" y="240" fill="#e6edf3">38</text><text x="800" y="240" fill="#8b98ad">$0.21</text>
+    <line x1="40" y1="254" x2="860" y2="254" stroke="#1f2737"/>
+    <!-- claude (selected) -->
+    <rect x="32" y="258" width="836" height="32" rx="6" fill="#58a6ff" fill-opacity="0.08"/>
+    <text x="44" y="280" fill="#e6edf3" font-weight="600">claude</text><text x="150" y="280" fill="#8b98ad">claude-sonnet-4-6</text>
+    <circle cx="344" cy="276" r="4" fill="#3fb950"/><text x="356" y="280" fill="#3fb950">healthy</text>
+    <text x="452" y="280" fill="#e6edf3">573ms</text><text x="556" y="280" fill="#8b98ad">0.0%</text>
+    <rect x="624" y="271" width="84" height="7" rx="3" fill="#1f2737"/><rect x="624" y="271" width="81" height="7" rx="3" fill="#3fb950"/>
+    <text x="730" y="280" fill="#e6edf3">95</text><text x="800" y="280" fill="#8b98ad">$0.71</text>
+    <text x="690" y="280" fill="#58a6ff" font-size="11">&#9664; selected</text>
+    <line x1="40" y1="294" x2="860" y2="294" stroke="#1f2737"/>
+    <!-- openai -->
+    <text x="44" y="320" fill="#e6edf3">openai</text><text x="150" y="320" fill="#8b98ad">gpt-4o</text>
+    <circle cx="344" cy="316" r="4" fill="#3fb950"/><text x="356" y="320" fill="#3fb950">healthy</text>
+    <text x="452" y="320" fill="#e6edf3">639ms</text><text x="556" y="320" fill="#8b98ad">2.7%</text>
+    <rect x="624" y="311" width="84" height="7" rx="3" fill="#1f2737"/><rect x="624" y="311" width="79" height="7" rx="3" fill="#3fb950"/>
+    <text x="730" y="320" fill="#e6edf3">79</text><text x="800" y="320" fill="#8b98ad">$0.68</text>
+    <line x1="40" y1="334" x2="860" y2="334" stroke="#1f2737"/>
+    <!-- gemini -->
+    <text x="44" y="360" fill="#e6edf3">gemini</text><text x="150" y="360" fill="#8b98ad">gemini-2.5-flash</text>
+    <circle cx="344" cy="356" r="4" fill="#d29922"/><text x="356" y="360" fill="#d29922">degraded</text>
+    <text x="452" y="360" fill="#f0883e">2184ms</text><text x="556" y="360" fill="#d29922">6.7%</text>
+    <rect x="624" y="351" width="84" height="7" rx="3" fill="#1f2737"/><rect x="624" y="351" width="63" height="7" rx="3" fill="#d29922"/>
+    <text x="730" y="360" fill="#e6edf3">38</text><text x="800" y="360" fill="#8b98ad">$0.24</text>
+  </g>
+
+  <!-- decisions feed -->
+  <text x="24" y="410" fill="#8b98ad" font-size="11" letter-spacing="1">RECENT ROUTING DECISIONS</text>
+  <rect x="24" y="420" width="852" height="116" rx="10" fill="#121622" stroke="#1f2737"/>
+  <g font-size="13">
+    <text x="44" y="448" fill="#e6edf3" font-weight="600">claude</text>
+    <rect x="110" y="438" width="58" height="16" rx="4" fill="#f85149" fill-opacity="0.15"/><text x="120" y="450" fill="#f85149" font-size="11">openai</text>
+    <rect x="176" y="438" width="58" height="16" rx="4" fill="#3fb950" fill-opacity="0.15"/><text x="186" y="450" fill="#3fb950" font-size="11">claude</text>
+    <text x="560" y="450" fill="#8b98ad" font-size="11">12:04:03 · balanced · 640ms · $0.0009</text>
+    <line x1="40" y1="462" x2="860" y2="462" stroke="#1f2737"/>
+    <text x="44" y="488" fill="#e6edf3" font-weight="600">mistral</text>
+    <rect x="118" y="478" width="62" height="16" rx="4" fill="#3fb950" fill-opacity="0.15"/><text x="128" y="490" fill="#3fb950" font-size="11">mistral</text>
+    <text x="560" y="490" fill="#8b98ad" font-size="11">12:04:03 · balanced · 421ms · $0.0006</text>
+    <line x1="40" y1="502" x2="860" y2="502" stroke="#1f2737"/>
+    <text x="44" y="526" fill="#e6edf3" font-weight="600">claude</text>
+    <rect x="110" y="516" width="74" height="16" rx="4" fill="#8b98ad" fill-opacity="0.15"/><text x="120" y="528" fill="#8b98ad" font-size="11">gemini&#8202;skip</text>
+    <rect x="192" y="516" width="58" height="16" rx="4" fill="#3fb950" fill-opacity="0.15"/><text x="202" y="528" fill="#3fb950" font-size="11">claude</text>
+    <text x="560" y="528" fill="#8b98ad" font-size="11">12:04:02 · balanced · 588ms · $0.0009</text>
+  </g>
+</svg>
